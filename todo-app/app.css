@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --button-color: hsl(220.32deg 81.82% 54.71%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,  #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 20px 30px;
+    border-radius: 10px;
+    animation: slideIn .5s ease-in-out;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+}
+.title {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.title h2 {
+    color: #002765;
+}
+.title i {
+    width: x;
+    margin-left: 10px;
+    color: var(--primary-color)
+}
+.row { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-top: 20px;
+
+}
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 600;
+}
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: var(--button-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+.author {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:.9rem;
+    color: #aeaeae;
+    font-style: italic;
+}
+
+#list-container {
+ margin-top: 20px;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	background: #fff;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+    animation: slideLeft 0.5s ease-in-out;
+}
+
+li:nth-child(2n){
+	background: #f7f7f7;
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+
+}
+span {
+	background: var(--button-color);
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0;
+}
+
+li:hover span {
+	width: 40px;
+	opacity: 1.0;
+}
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
+
+@keyframes slideLeft {
+
+    0%   {
+        transform:translateY(-100%);
+        opacity: 0; 
+    }
+    100%  {
+        transform:translateY(0) ;
+        opacity: 1; 
+    }
+}
+
+@keyframes slideIn {
+
+    0%   {
+        transform:translateX(-100%);
+        opacity: 0; 
+    }
+    100%  {
+        transform:translateX(0) ;
+        opacity: 1; 
+    }
+}
